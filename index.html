@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#dce8f4" />
+    <meta
+      name="description"
+      content="Portfólio interativo de Davi Scartezini em uma experiência inspirada no Windows 11."
+    />
+    <title>Portfólio | Davi Scartezini</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main
+      class="desktop"
+      id="desktop"
+      aria-label="Área de trabalho do portfólio"
+    >
+      <div class="wallpaper-glow wallpaper-glow-one" aria-hidden="true"></div>
+      <div class="wallpaper-glow wallpaper-glow-two" aria-hidden="true"></div>
+
+      <section class="desktop-icons" aria-label="Atalhos da área de trabalho">
+        <button
+          class="desktop-icon"
+          data-open="portfolio"
+          aria-label="Abrir Meu portfólio"
+        >
+          <span class="desktop-icon-art folder-art">✦</span
+          ><span>Meu portfólio</span>
+        </button>
+        <button
+          class="desktop-icon"
+          data-open="resume"
+          aria-label="Abrir Currículo"
+        >
+          <span class="desktop-icon-art document-art">CV</span
+          ><span>Currículo</span>
+        </button>
+        <button
+          class="desktop-icon"
+          data-open="linkedin"
+          aria-label="Abrir LinkedIn"
+        >
+          <span class="desktop-icon-art linkedin-art">in</span
+          ><span>LinkedIn</span>
+        </button>
+        <button
+          class="desktop-icon"
+          data-open="github"
+          aria-label="Abrir GitHub"
+        >
+          <span class="desktop-icon-art github-art">⌘</span><span>GitHub</span>
+        </button>
+        <button
+          class="desktop-icon"
+          data-open="about"
+          aria-label="Abrir Sobre mim"
+        >
+          <span class="desktop-icon-art about-art">👤</span
+          ><span>Sobre mim</span>
+        </button>
+      </section>
+
+      <div class="window-layer" id="window-layer" aria-live="polite"></div>
+      <div class="start-menu" id="start-menu" hidden>
+        <label class="start-search">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="app-search"
+            type="search"
+            placeholder="Pesquisar aplicativos"
+            autocomplete="off"
+          />
+        </label>
+        <div class="start-heading">
+          <strong>Fixado</strong
+          ><span>Todos os aplicativos <span aria-hidden="true">›</span></span>
+        </div>
+        <div class="pinned-apps" id="pinned-apps"></div>
+        <div class="start-footer">
+          <span class="user-chip"
+            ><span class="avatar avatar-small">DS</span
+            ><strong>Davi Scartezini</strong></span
+          ><button
+            class="power-button"
+            id="power-button"
+            aria-label="Desligar tela"
+            title="Desligar tela"
+          >
+            ⏻
+          </button>
+        </div>
+      </div>
+
+      <div class="quick-panel" id="quick-panel" hidden>
+        <div class="quick-toggles">
+          <button class="quick-toggle active" data-toggle="wifi">
+            <span>◉</span> Wi-Fi
+          </button>
+          <button class="quick-toggle active" data-toggle="bluetooth">
+            <span>ᛒ</span> Bluetooth
+          </button>
+          <button class="quick-toggle" data-toggle="focus">
+            <span>☾</span> Foco
+          </button>
+          <button class="quick-toggle" data-toggle="night">
+            <span>☼</span> Luz noturna
+          </button>
+        </div>
+        <div class="brightness-control">
+          <span>☼</span
+          ><input
+            type="range"
+            min="55"
+            max="110"
+            value="100"
+            aria-label="Brilho da tela"
+          /><span>▰</span>
+        </div>
+        <div class="quick-footer">
+          <span>🔋 100%</span
+          ><button id="calendar-toggle">Abrir calendário</button>
+        </div>
+      </div>
+
+      <section
+        class="calendar-panel"
+        id="calendar-panel"
+        hidden
+        aria-label="Calendário"
+      >
+        <div class="calendar-date" id="calendar-date"></div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+        <div class="calendar-bottom">Sem compromissos para hoje</div>
+      </section>
+
+      <div class="context-menu" id="context-menu" hidden>
+        <button data-action="refresh">⟳ <span>Atualizar</span></button>
+        <button data-action="portfolio">
+          ▣ <span>Abrir meu portfólio</span>
+        </button>
+        <button data-action="theme">◐ <span>Alternar aparência</span></button>
+      </div>
+
+      <footer class="taskbar" aria-label="Barra de tarefas">
+        <div class="taskbar-weather">
+          <span>☀</span
+          ><span><strong>24°</strong><small>Ensolarado</small></span>
+        </div>
+        <div class="taskbar-center">
+          <button
+            class="taskbar-button start-button"
+            id="start-button"
+            aria-label="Iniciar"
+            title="Iniciar"
+          >
+            <span class="windows-mark"><i></i><i></i><i></i><i></i></span>
+          </button>
+          <button
+            class="taskbar-button search-button"
+            id="search-button"
+            aria-label="Pesquisar"
+            title="Pesquisar"
+          >
+            ⌕
+          </button>
+          <div class="taskbar-apps" id="taskbar-apps"></div>
+        </div>
+        <div class="system-tray">
+          <button
+            class="tray-connectivity"
+            id="quick-button"
+            aria-label="Configurações rápidas"
+            title="Configurações rápidas"
+          >
+            <span>⌁</span><span>◉</span><span>🔋</span>
+          </button>
+          <button
+            class="clock-button"
+            id="clock-button"
+            aria-label="Abrir calendário"
+          >
+            <span id="clock-time">00:00</span
+            ><span id="clock-date">00/00/0000</span>
+          </button>
+          <button
+            class="notification-button"
+            aria-label="Notificações"
+            title="Notificações"
+          >
+            ▱
+          </button>
+        </div>
+      </footer>
+      <div class="screen-off" id="screen-off" hidden>
+        <span class="windows-mark"><i></i><i></i><i></i><i></i></span
+        ><button id="wake-button">Voltar ao portfólio</button>
+      </div>
+    </main>
+  </body>
+</html>
