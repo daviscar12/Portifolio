@@ -171,6 +171,14 @@ input:focus-visible {
   background: #f5dfc9;
   font-size: 23px;
 }
+.google-art {
+  border: 1px solid #e1e5e9;
+  background: #fff;
+  background-image: conic-gradient(from 45deg, #4285f4 0 25%, #34a853 25% 47%, #fbbc05 47% 70%, #ea4335 70% 87%, #4285f4 87%);
+  background-clip: text;
+  color: transparent;
+  font-size: 29px;
+}
 
 .taskbar {
   position: absolute;
@@ -882,6 +890,14 @@ input:focus-visible {
   margin: 5px 0 0;
   font-size: 11px;
 }
+.resume-items {
+  display: grid;
+  gap: 16px;
+}
+.resume-item + .resume-item {
+  padding-top: 14px;
+  border-top: 1px solid #edf0f2;
+}
 .resume-meta {
   color: #71808a;
   font-size: 10px;
@@ -1197,4 +1213,130 @@ input:focus-visible {
   .app-page {
     padding: 0;
   }
+}
+.google-page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(55px, 12vh, 110px);
+}
+.google-logo {
+  margin-bottom: 27px;
+  font-family: Arial, sans-serif;
+  font-size: clamp(54px, 9vw, 76px);
+  font-weight: 600;
+  letter-spacing: -5px;
+  line-height: 1;
+}
+.google-logo span:nth-child(1),
+.google-shortcuts a:nth-child(1) span {
+  color: #4285f4;
+}
+.google-logo span:nth-child(2),
+.google-shortcuts a:nth-child(2) span {
+  color: #ea4335;
+}
+.google-logo span:nth-child(3) {
+  color: #fbbc05;
+}
+.google-logo span:nth-child(4),
+.google-shortcuts a:nth-child(3) span {
+  color: #4285f4;
+}
+.google-logo span:nth-child(5) {
+  color: #34a853;
+}
+.google-logo span:nth-child(6) {
+  color: #ea4335;
+}
+.google-search {
+  width: min(100%, 570px);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid #dfe4e8;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(40, 56, 72, 0.08);
+}
+.google-search:hover,
+.google-search:focus-within {
+  border-color: transparent;
+  box-shadow: 0 2px 10px rgba(40, 56, 72, 0.2);
+}
+.google-search-icon {
+  color: #89939d;
+  font-size: 25px;
+  line-height: 1;
+}
+.google-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #26323c;
+  background: transparent;
+  font-size: 14px;
+}
+.google-search input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+.google-search button {
+  border: 0;
+  background: transparent;
+  color: #4285f4;
+  font-size: 24px;
+  cursor: pointer;
+}
+.google-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 23px;
+}
+.google-actions button,
+.google-actions a {
+  padding: 9px 14px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #f4f6f8;
+  color: #3c4650;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.google-actions button:hover,
+.google-actions a:hover {
+  border-color: #d5dbe1;
+}
+.google-note {
+  margin: 27px 0 0;
+  font-size: 11px !important;
+}
+.google-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+.google-shortcuts a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid #e0e6eb;
+  border-radius: 18px;
+  color: #526170;
+  font-size: 11px;
+  text-decoration: none;
+}
+.google-shortcuts a:hover {
+  background: #fff;
+}
+.google-shortcuts a span {
+  font-size: 13px;
+  font-weight: 700;
 }
